@@ -754,10 +754,5 @@ QVariant UBGraphicsTextItemDelegate::itemChange(QGraphicsItem::GraphicsItemChang
         }
     }
 
-    if (value.toBool() == false && delegated()->document()->toPlainText().isEmpty()) {
-        int wdth = QFontMetrics(delegated()->font()).width(delegated()->mTypeTextHereLabel);
-        delegated()->setTextWidth(qMax(wdth, (int)(delegated()->textWidth())));
-    }
-
     return UBGraphicsItemDelegate::itemChange(change, value);
 }
