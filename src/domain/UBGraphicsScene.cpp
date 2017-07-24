@@ -48,6 +48,7 @@
 #include "gui/UBMagnifer.h"
 #include "gui/UBMainWindow.h"
 #include "gui/UBToolWidget.h"
+#include "gui/UBResources.h"
 
 #include "tools/UBGraphicsRuler.h"
 #include "tools/UBGraphicsProtractor.h"
@@ -317,6 +318,7 @@ UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoSta
     , mEraser(0)
     , mPointer(0)
     , mMarkerCircle(0)
+    , mPenCircle(0)
     , mDocument(parent)
     , mDarkBackground(false)
     , mCrossedBackground(false)
@@ -345,6 +347,7 @@ UBGraphicsScene::UBGraphicsScene(UBDocumentProxy* parent, bool enableUndoRedoSta
     createEraiser();
     createPointer();
     createMarkerCircle();
+    createPenCircle();
 
     if (UBApplication::applicationController)
     {
@@ -406,6 +409,10 @@ bool UBGraphicsScene::inputDevicePress(const QPointF& scenePos, const qreal& pre
             // hide the marker preview circle
             if (currentTool == UBStylusTool::Marker)
                 hideMarkerCircle();
+
+            // hide the pen preview circle
+            if (currentTool == UBStylusTool::Pen)
+                hidePenCircle();
 
             // ---------------------------------------------------------------
             // Create a new Stroke. A Stroke is a collection of QGraphicsLines
@@ -483,6 +490,15 @@ bool UBGraphicsScene::inputDeviceMove(const QPointF& scenePos, const qreal& pres
             hideMarkerCircle();
         else {
             drawMarkerCircle(position);
+            accepted = true;
+        }
+    }
+
+    else if (currentTool == UBStylusTool::Pen) {
+        if (mInputDeviceIsPressed)
+            hidePenCircle();
+        else {
+            drawPenCircle(position);
             accepted = true;
         }
     }
@@ -728,11 +744,39 @@ void UBGraphicsScene::drawMarkerCircle(const QPointF &pPoint)
 
 }
 
+void UBGraphicsScene::drawPenCircle(const QPointF &pPoint)
+{
+    if (mPenCircle && UBSettings::settings()->showPenPreviewCircle->get().toBool() &&
+        UBSettings::settings()->currentPenWidth() >= UBSettings::settings()->penPreviewFromSize->get().toInt()) {
+        qreal penDiameter = UBSettings::settings()->currentPenWidth();
+        penDiameter /= UBApplication::boardController->systemScaleFactor();
+        penDiameter /= UBApplication::boardController->currentZoom();
+        qreal penRadius = penDiameter/2;
+
+        mPenCircle->setRect(QRectF(pPoint.x() - penRadius, pPoint.y() - penRadius,
+                                      penDiameter, penDiameter));
+
+        controlView()->viewport()->setCursor(QCursor (Qt::BlankCursor));
+        mPenCircle->show();
+    }
+    else
+    {
+        controlView()->viewport()->setCursor(UBResources::resources()->penCursor);
+    }
+
+}
+
 void UBGraphicsScene::hideMarkerCircle()
 {
     if (mMarkerCircle) {
         mMarkerCircle->hide();
     }
+}
+
+void UBGraphicsScene::hidePenCircle()
+{
+    if (mPenCircle)
+        mPenCircle->hide();
 }
 
 // call this function when user release mouse button in Magnifier mode
@@ -955,6 +999,7 @@ void UBGraphicsScene::setBackground(bool pIsDark, bool pIsCrossed)
 
         updateEraserColor();
         updateMarkerCircleColor();
+        updatePenCircleColor();
         recolorAllItems();
 
         needRepaint = true;
@@ -1146,6 +1191,7 @@ void UBGraphicsScene::hideTool()
 {
     hideEraser();
     hideMarkerCircle();
+    hidePenCircle();
 }
 
 void UBGraphicsScene::leaveEvent(QEvent * event)
@@ -2617,6 +2663,25 @@ void UBGraphicsScene::createMarkerCircle()
     }
 }
 
+void UBGraphicsScene::createPenCircle()
+{
+    if (UBSettings::settings()->showPenPreviewCircle->get().toBool()) {
+        mPenCircle = new QGraphicsEllipseItem();
+
+        mPenCircle->setRect(QRect(0, 0, 0, 0));
+        mPenCircle->setVisible(false);
+
+        mPenCircle->setPen(Qt::DotLine);
+        updatePenCircleColor();
+
+        mPenCircle->setData(UBGraphicsItemData::ItemLayerType, QVariant(UBItemLayerType::Control));
+        mPenCircle->setData(UBGraphicsItemData::itemLayerType, QVariant(itemLayerType::Eraiser));
+
+        mTools << mPenCircle;
+        addItem(mPenCircle);
+    }
+}
+
 void UBGraphicsScene::updateEraserColor()
 {
     if (!mEraser)
@@ -2652,6 +2717,27 @@ void UBGraphicsScene::updateMarkerCircleColor()
 
     mcPen.setStyle(Qt::DotLine);
     mMarkerCircle->setPen(mcPen);
+}
+
+void UBGraphicsScene::updatePenCircleColor()
+{
+    if (!mPenCircle)
+        return;
+
+    QPen mcPen = mPenCircle->pen();
+
+    if (mDarkBackground) {
+        mcPen.setColor(UBSettings::penCirclePenColorDarkBackground);
+        mPenCircle->setBrush(UBSettings::penCircleBrushColorDarkBackground);
+    }
+
+    else {
+        mcPen.setColor(UBSettings::penCirclePenColorLightBackground);
+        mPenCircle->setBrush(UBSettings::penCircleBrushColorLightBackground);
+    }
+
+    mcPen.setStyle(Qt::DotLine);
+    mPenCircle->setPen(mcPen);
 }
 
 void UBGraphicsScene::setToolCursor(int tool)

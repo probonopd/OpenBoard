@@ -83,6 +83,12 @@ QColor UBSettings::markerCircleBrushColorLightBackground = QColor(255, 255, 255,
 QColor UBSettings::markerCirclePenColorDarkBackground = QColor(255, 255, 255, 127);
 QColor UBSettings::markerCirclePenColorLightBackground = QColor(0, 0, 0, 127);
 
+QColor UBSettings::penCircleBrushColorDarkBackground = QColor(127, 127, 127, 80);
+QColor UBSettings::penCircleBrushColorLightBackground = QColor(255, 255, 255, 30);
+
+QColor UBSettings::penCirclePenColorDarkBackground = QColor(255, 255, 255, 127);
+QColor UBSettings::penCirclePenColorLightBackground = QColor(0, 0, 0, 127);
+
 QColor UBSettings::documentSizeMarkColorDarkBackground = QColor(44, 44, 44, 200);
 QColor UBSettings::documentSizeMarkColorLightBackground = QColor(241, 241, 241);
 
@@ -313,6 +319,8 @@ void UBSettings::init()
 
     showEraserPreviewCircle = new UBSetting(this, "Board", "ShowEraserPreviewCircle", true);
     showMarkerPreviewCircle = new UBSetting(this, "Board", "ShowMarkerPreviewCircle", true);
+    showPenPreviewCircle = new UBSetting(this, "Board", "ShowPenPreviewCircle", true);
+    penPreviewFromSize = new UBSetting(this, "Board", "PenPreviewFromSize", 5);
 
     webUseExternalBrowser = new UBSetting(this, "Web", "UseExternalBrowser", false);
 
@@ -756,6 +764,15 @@ void UBSettings::setPenPressureSensitive(bool sensitive)
     boardPenPressureSensitive->set(sensitive);
 }
 
+void UBSettings::setPenPreviewCircle(bool circle)
+{
+    showPenPreviewCircle->set(circle);
+}
+
+void UBSettings::setPenPreviewFromSize(int size)
+{
+    penPreviewFromSize->set(size);
+}
 
 void UBSettings::setMarkerPressureSensitive(bool sensitive)
 {
