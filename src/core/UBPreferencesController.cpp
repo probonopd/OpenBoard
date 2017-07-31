@@ -180,6 +180,8 @@ void UBPreferencesController::wire()
 
     mMarkerProperties->pressureSensitiveCheckBox->setText(tr("Marker is pressure sensitive"));
 
+    mMarkerProperties->circleFrame->hide();
+
     connect(mMarkerProperties->fineSlider, SIGNAL(valueChanged(int)), this, SLOT(widthSliderChanged(int)));
     connect(mMarkerProperties->mediumSlider, SIGNAL(valueChanged(int)), this, SLOT(widthSliderChanged(int)));
     connect(mMarkerProperties->strongSlider, SIGNAL(valueChanged(int)), this, SLOT(widthSliderChanged(int)));
