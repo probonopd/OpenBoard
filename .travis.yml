@@ -4,11 +4,11 @@ sudo: require
 dist: trusty
 
 before_install:
-    - sudo add-apt-repository ppa:beineri/opt-qt59-trusty -y # webkit svg script xmlpatterns uitools multimedia webkitwidgets multimediawidgets
+    - sudo add-apt-repository ppa:beineri/opt-qt551-trusty -y # webkit svg script xmlpatterns uitools multimedia webkitwidgets multimediawidgets
     - sudo apt-get update -qq
 
 install:
-    - sudo apt-get -y install qt59base qt59webengine qt59svg qt59script qt59xmlpatterns qt59tools qt59multimedia
+    - sudo apt-get -y install qt51base qt51webkit qt51svg qt51script qt51xmlpatterns qt51tools qt51multimedia
     - source /opt/qt*/bin/qt*-env.sh
 
 script:
