@@ -8,7 +8,7 @@ before_install:
     - sudo apt-get update -qq
 
 install:
-    - sudo apt-get -y install qt51base qt51webkit qt51svg qt51script qt51xmlpatterns qt51tools qt51multimedia
+    - sudo apt-get -y install qt55base qt55webkit qt55svg qt55script qt55xmlpatterns qt55tools qt55multimedia
     - source /opt/qt*/bin/qt*-env.sh
 
 script:
