@@ -28,6 +28,7 @@ script:
   - qmake xpdf.pro -spec linux-g++
   - make
   - cd ..
+  - cd ..
   - qmake PREFIX=/usr OpenBoard.pro -spec linux-g++-64 # As per README.md
   - make -j$(nproc)
   - make INSTALL_ROOT=appdir install ; find appdir/
