@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=OpenBoard
+Comment=OpenBoard, an interactive white board application
+Exec=openboard %f
+Icon=OpenBoard
+StartupNotify=true
+Terminal=false
+Type=Application
+MimeType=application/ubz;
+Categories=Education;
