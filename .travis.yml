@@ -12,12 +12,12 @@ install:
     - source /opt/qt*/bin/qt*-env.sh
 
 script:
-  - git clone https://github.com/qtproject/qt-solutions/tree/master/qtsingleapplication
-  - cd qtsingleapplication
+  - git clone https://github.com/qtproject/
+  - cd qtproject/qt-solutions/tree/master/qtsingleapplication
   - qmake PREFIX=/opt/qt*/
   - make -j$(nproc)
   - sudo make install
-  - cd ..
+  - cd -
   - qmake -spec linux-g++-64 PREFIX=/usr # As per README.md
   - make -j$(nproc)
   - make INSTALL_ROOT=appdir install ; find appdir/
