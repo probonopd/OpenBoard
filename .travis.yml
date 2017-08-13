@@ -12,8 +12,8 @@ install:
     - source /opt/qt*/bin/qt*-env.sh
 
 script:
-  - git clone https://github.com/qtproject/
-  - cd qtproject/qt-solutions/tree/master/qtsingleapplication
+  - git clone https://github.com/qtproject/qt-solutions
+  - cd qt-solutions/tree/master/qtsingleapplication
   - qmake PREFIX=/opt/qt*/
   - make -j$(nproc)
   - sudo make install
