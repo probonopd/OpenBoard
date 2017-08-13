@@ -15,6 +15,7 @@ script:
   - qmake PREFIX=/usr -spec linux-g++-64 # As per README.md
   - make -j$(nproc)
   - make INSTALL_ROOT=appdir install ; find appdir/
+  - mkdir -p appdir/usr/share/applications/ ; cp resources/linux/openboard.desktop appdir/usr/share/applications/
   - wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
   - chmod a+x linuxdeployqt*.AppImage
   - unset QTDIR; unset QT_PLUGIN_PATH ; unset LD_LIBRARY_PATH
