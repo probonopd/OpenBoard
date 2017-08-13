@@ -12,6 +12,12 @@ install:
     - source /opt/qt*/bin/qt*-env.sh
 
 script:
+  - git clone https://github.com/qtproject/qt-solutions
+  - cd qt-solutions/qtsingleapplication
+  - qmake PREFIX=/opt/qt*/
+  - make -j$(nproc)
+  - sudo make install
+  - cd -
   - git clone https://github.com/OpenBoard-org/OpenBoard-ThirdParty
   - cd OpenBoard-ThirdParty
   - cd freetype
