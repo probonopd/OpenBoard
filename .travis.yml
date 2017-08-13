@@ -18,7 +18,7 @@ script:
   - make -j$(nproc)
   - sudo make install
   - cd -
-  - qmake -spec linux-g++-64 PREFIX=/usr # As per README.md
+  - qmake PREFIX=/usr OpenBoard.pro -spec linux-g++-64 # As per README.md
   - make -j$(nproc)
   - make INSTALL_ROOT=appdir install ; find appdir/
   - mkdir -p appdir/usr/share/applications/ ; cp resources/linux/openboard.desktop appdir/usr/share/applications/
