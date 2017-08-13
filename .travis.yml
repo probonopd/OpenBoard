@@ -14,7 +14,7 @@ install:
 script:
   - git clone https://github.com/qtproject/qt-solutions
   - cd qt-solutions/qtsingleapplication
-  - qmake PREFIX=/opt/qt*/
+  - qmake PREFIX=/usr
   - make -j$(nproc)
   - sudo make install
   - cd -
