@@ -12,12 +12,22 @@ install:
     - source /opt/qt*/bin/qt*-env.sh
 
 script:
-  - git clone https://github.com/qtproject/qt-solutions
-  - cd qt-solutions/qtsingleapplication
-  - qmake PREFIX=/opt/qt*/
-  - make -j$(nproc)
-  - sudo make install
-  - cd -
+  - git clone https://github.com/OpenBoard-org/OpenBoard-ThirdParty
+  - cd OpenBoard-ThirdParty
+  - cd freetype
+  - qmake freetype.pro -spec linux-g++
+  - make
+  - cd ..
+  - cd quazip
+  -  qmake quazip.pro -spec linux-g++
+  -  make
+  -  cd ..
+  -  cd xpdf/xpdf-3.04
+  -  ./configure --with-freetype2-library="../../freetype/lib/linux" --with-freetype2-includes="../../freetype/freetype-2.6.1/include"
+  - cd ..
+  - qmake xpdf.pro -spec linux-g++
+  - make
+  - cd ..
   - qmake PREFIX=/usr OpenBoard.pro -spec linux-g++-64 # As per README.md
   - make -j$(nproc)
   - make INSTALL_ROOT=appdir install ; find appdir/
