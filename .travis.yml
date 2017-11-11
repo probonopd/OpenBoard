@@ -18,6 +18,7 @@ script:
   - make -j$(nproc)
   - sudo make install
   - cd -
+  - cd ..
   - git clone https://github.com/OpenBoard-org/OpenBoard-ThirdParty
   - cd OpenBoard-ThirdParty
   - cd freetype
@@ -35,6 +36,7 @@ script:
   - make
   - cd ..
   - cd ..
+  - cd OpenBoard
   - qmake PREFIX=/usr OpenBoard.pro -spec linux-g++-64 # As per README.md
   - make -j$(nproc)
   - make INSTALL_ROOT=appdir install ; find appdir/
