@@ -23,21 +23,21 @@ script:
   - cd OpenBoard-ThirdParty
   - cd freetype
   - qmake freetype.pro -spec linux-g++
-  - make
+  - make -j$(nproc)
   - cd ..
   - cd quazip
   -  qmake quazip.pro -spec linux-g++
-  -  make
+  -  make -j$(nproc)
   -  cd ..
   -  cd xpdf/xpdf-3.04
   -  ./configure --with-freetype2-library="../../freetype/lib/linux" --with-freetype2-includes="../../freetype/freetype-2.6.1/include"
   - cd ..
   - qmake xpdf.pro -spec linux-g++
-  - make
+  - make -j$(nproc)
   - cd ..
   - cd ..
   - cd OpenBoard
-  - qmake PREFIX=/usr OpenBoard.pro -spec linux-g++-64 # As per README.md
+  - qmake OpenBoard.pro CONFIG+=release PREFIX=/usr -spec linux-g++-64
   - make -j$(nproc)
   - make INSTALL_ROOT=appdir install ; find appdir/
   - mkdir -p appdir/usr/share/applications/ ; cp resources/linux/openboard.desktop appdir/usr/share/applications/
