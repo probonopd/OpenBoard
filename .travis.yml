@@ -40,7 +40,7 @@ script:
   - qmake OpenBoard.pro CONFIG+=release PREFIX=/usr -spec linux-g++-64
   - make -j$(nproc)
   - make INSTALL_ROOT=appdir install ; find appdir/
-  - mkdir -p appdir/usr/share/icons/hicolor/256x256/apps ; cp blob/master/resources/images/OpenBoard.png appdir/usr/share/icons/hicolor/256x256/apps/ # FIXME: make install should have installed an icon there
+  - mkdir -p appdir/usr/share/icons/hicolor/256x256/apps ; cp resources/images/OpenBoard.png appdir/usr/share/icons/hicolor/256x256/apps/ # FIXME: make install should have installed an icon there
   - mkdir -p appdir/usr/share/applications/ ; cp resources/linux/openboard.desktop appdir/usr/share/applications/ # FIXME: make install should have done that
   - mkdir appdir/usr/bin ; cp build/linux/release/product/OpenBoard appdir/usr/bin/openboard # FIXME: make install should have done that
   - wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
