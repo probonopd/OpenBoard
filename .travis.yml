@@ -43,7 +43,7 @@ script:
   - mkdir -p appdir/usr/share/icons/hicolor/256x256/apps ; cp resources/images/OpenBoard.png appdir/usr/share/icons/hicolor/256x256/apps/ # FIXME: make install should have installed an icon there
   - mkdir -p appdir/usr/share/applications/ ; cp resources/linux/openboard.desktop appdir/usr/share/applications/ # FIXME: make install should have done that
   - mkdir appdir/usr/bin ; cp build/linux/release/product/OpenBoard appdir/usr/bin/openboard # FIXME: make install should have done that
-  - cp -r appdir/home/*/build/*/OpenBoard/build/linux/release/product/library/* appdir/usr/bin/library/ # FIXME: https://github.com/OpenBoard-org/OpenBoard/issues/146
+  - cp -r appdir/home/*/build/*/OpenBoard/build/linux/release/product/library appdir/usr/bin/ # FIXME: https://github.com/OpenBoard-org/OpenBoard/issues/146
   - rm -rf appdir/home/ # FIXME: https://github.com/OpenBoard-org/OpenBoard/issues/146
   - wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
   - chmod a+x linuxdeployqt*.AppImage
