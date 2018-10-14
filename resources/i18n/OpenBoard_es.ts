@@ -5,7 +5,7 @@
     <name>BlackoutWidget</name>
     <message>
         <source>Click to Return to Application</source>
-        <translation>Haga clic para regresar a la aplicación</translation>
+        <translation type="unfinished">Haga clic para regresar a la aplicación</translation>
     </message>
 </context>
 <context>
@@ -793,11 +793,23 @@
     </message>
     <message>
         <source>Open Tutorial</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir Tutorial</translation>
     </message>
     <message>
         <source>Open the tutorial web page</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir el tutorial en página web</translation>
+    </message>
+    <message>
+        <source>Ruled Light Background</source>
+        <translation>Fondo claro con cuadrícula</translation>
+    </message>
+    <message>
+        <source>Ruled Dark Background</source>
+        <translation>Fondo oscuro con cuadrícula</translation>
+    </message>
+    <message>
+        <source>Reset grid size</source>
+        <translation>Restablecer el tamaño de lacuadrícula</translation>
     </message>
 </context>
 <context>
@@ -890,6 +902,17 @@
         <source>Update</source>
         <translation>Actualizar</translation>
     </message>
+    <message>
+        <source>Board drawing...</source>
+        <translation type="vanished">Dibujo de pizarra</translation>
+    </message>
+</context>
+<context>
+    <name>UBBackgroundPalette</name>
+    <message>
+        <source>Grid size</source>
+        <translation>Tamaño de la cuadrícula</translation>
+    </message>
 </context>
 <context>
     <name>UBBoardController</name>
@@ -919,7 +942,7 @@
     </message>
     <message>
         <source>Delete page %1 from document</source>
-        <translation>Borrar la página %1 del documento</translation>
+        <translation type="vanished">Borrar la página %1 del documento</translation>
     </message>
     <message>
         <source>Page %1 deleted</source>
@@ -939,11 +962,15 @@
     </message>
     <message>
         <source>Saving document...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardando documento</translation>
     </message>
     <message>
         <source>Document has just been saved...</source>
-        <translation type="unfinished"></translation>
+        <translation>Acaba de guardarse el documento...</translation>
+    </message>
+    <message>
+        <source>Deleting page %1</source>
+        <translation>Borrando página %1</translation>
     </message>
 </context>
 <context>
@@ -955,6 +982,13 @@
     <message>
         <source>CapturedImage</source>
         <translation>Imagen capturada</translation>
+    </message>
+</context>
+<context>
+    <name>UBBoardThumbnailsView</name>
+    <message>
+        <source>Loading page (%1/%2)</source>
+        <translation>Cargando página (%1/%2)</translation>
     </message>
 </context>
 <context>
@@ -1004,7 +1038,7 @@
     </message>
     <message>
         <source>Show OpenBoard</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar OpenBoard</translation>
     </message>
 </context>
 <context>
@@ -1138,15 +1172,15 @@
     </message>
     <message>
         <source>The document &apos;%1&apos; has been generated with a newer version of OpenBoard (%2). By opening it, you may lose some information. Do you want to proceed?</source>
-        <translation type="unfinished"></translation>
+        <translation>El documento &apos;%1&apos; fue generado con una nueva versión de OpenBoard (%2). Al abrirlo, puede perder información. Desea continuar?</translation>
     </message>
     <message>
         <source>Are you sure you want to remove all selected documents?</source>
-        <translation type="unfinished"></translation>
+        <translation>Está seguro de querer eliminar todos los documentos seleccionados?</translation>
     </message>
     <message>
         <source>Remove multiple documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar varios documentos</translation>
     </message>
 </context>
 <context>
@@ -1229,10 +1263,44 @@
     </message>
 </context>
 <context>
+    <name>UBDraggableThumbnail</name>
+    <message>
+        <source>Page %0</source>
+        <translation type="unfinished">Página %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDraggableThumbnailView</name>
+    <message>
+        <source>Page %0</source>
+        <translation>Página %0</translation>
+    </message>
+</context>
+<context>
     <name>UBExportAdaptor</name>
     <message>
         <source>Warnings during export was appeared</source>
         <translation>Han aparecido advertencias durante la exportación</translation>
+    </message>
+    <message>
+        <source>Exporting document...</source>
+        <translation>Exportando documento...</translation>
+    </message>
+    <message>
+        <source>Export failed</source>
+        <translation>Falló la exportación</translation>
+    </message>
+    <message>
+        <source>Unable to export to the selected location. You do not have the permissions necessary to save the file.</source>
+        <translation>No fue posible exportar al lugar seleccionado. No tiene los permisos necesarios para guardar el fichero</translation>
+    </message>
+    <message>
+        <source>Export failed: location not writable</source>
+        <translation>Falló la exportación: no se puede escribir en el lugar seleccionado</translation>
+    </message>
+    <message>
+        <source>Export successful.</source>
+        <translation>Exportación satisfactoria.</translation>
     </message>
 </context>
 <context>
@@ -1270,11 +1338,11 @@
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Exportando documento...</translation>
+        <translation type="vanished">Exportando documento...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Exportación satisfactoria.</translation>
+        <translation type="vanished">Exportación satisfactoria.</translation>
     </message>
     <message>
         <source>Exporting %1 %2 of %3</source>
@@ -1282,19 +1350,7 @@
     </message>
     <message>
         <source>Export to OpenBoard Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export failed: location not writable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to export to the selected location. You do not have the permissions necessary to save the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar al formato OpenBoard</translation>
     </message>
 </context>
 <context>
@@ -1305,27 +1361,15 @@
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Exportando documento...</translation>
+        <translation type="vanished">Exportando documento...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Exportación satisfactoria.</translation>
+        <translation type="vanished">Exportación satisfactoria.</translation>
     </message>
     <message>
         <source>Export to PDF</source>
         <translation>Exportar a PDF</translation>
-    </message>
-    <message>
-        <source>Export failed: location not writable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to export to the selected location. You do not have the permissions necessary to save the file.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1336,11 +1380,11 @@
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>Exportando documento...</translation>
+        <translation type="vanished">Exportando documento...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>Exportación satisfactoria.</translation>
+        <translation type="vanished">Exportación satisfactoria.</translation>
     </message>
     <message>
         <source>Exporting page %1 of %2</source>
@@ -1386,7 +1430,7 @@
     </message>
     <message>
         <source>Set as background</source>
-        <translation>Definir como fondo</translation>
+        <translation type="vanished">Definir como fondo</translation>
     </message>
     <message>
         <source>Add to library</source>
@@ -1526,24 +1570,28 @@
         <source>Go to Content Source</source>
         <translation>Ir a fuente de contenido</translation>
     </message>
+    <message>
+        <source>Set as background</source>
+        <translation>Definir como fondo</translation>
+    </message>
 </context>
 <context>
     <name>UBGraphicsMediaItem</name>
     <message>
         <source>Media resource couldn&apos;t be resolved</source>
-        <translation type="unfinished"></translation>
+        <translation>No se pudo resolver el recurso multimedia</translation>
     </message>
     <message>
         <source>Unsupported media format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formato multimedia no soportado</translation>
     </message>
     <message>
         <source>Media playback service not found</source>
-        <translation type="unfinished"></translation>
+        <translation>Servicio de reprodución multimedia no encontrado</translation>
     </message>
     <message>
         <source>Media error: </source>
-        <translation type="unfinished"></translation>
+        <translation>Error multimedia</translation>
     </message>
 </context>
 <context>
@@ -1628,7 +1676,7 @@
     </message>
     <message>
         <source>OpenBoard (*.ubz)</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenBoard (*.ubz)</translation>
     </message>
 </context>
 <context>
@@ -1733,27 +1781,27 @@ Do you want to ignore these errors for this host?</source>
     <name>UBOpenSankoreImporterWidget</name>
     <message>
         <source>Open-Sankore Documents Detected</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrados Documentos Open-Sankore</translation>
     </message>
     <message>
         <source>Show this panel next time</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar este panel la próxima vez</translation>
     </message>
     <message>
         <source>You can always access the OpenBoard Document Importer through the Preferences panel in the About tab. Warning, if you have already imported your Open-Sankore datas, you might loose your current OpenBoard documents.</source>
-        <translation type="unfinished"></translation>
+        <translation>Siempre puede acceder al importador de documentos OpenBoard a través del panel Preferencias en la pestaña Sobre. Aviso, ya se han importado sus datos Open-Sankore, puede perder documentos OpenBoard actuales</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Proceed</source>
-        <translation type="unfinished"></translation>
+        <translation>Continuar</translation>
     </message>
     <message>
         <source>Open-Sankoré documents are present on your computer. It is possible to import them to OpenBoard by pressing the “Proceed” button to launch the importer application.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los documentos de Open-Sankoré de su computador.Es posible importarlos a OpenBoard pulsando en el botón &quot;Continuar&quot; de la aplicación importadora.</translation>
     </message>
 </context>
 <context>
@@ -1768,7 +1816,11 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
-        <translation type="unfinished"></translation>
+        <translation>perdió el acceso al repositorio de documentos &apos;%1&apos;. Desafortunadamente, la aplicación debe cerrarse para evitar la corrrupción de datos. También se pueden perder los últimos cambios. </translation>
+    </message>
+    <message>
+        <source>Moving page to trash folder...</source>
+        <translation>Mover la página a la papelera</translation>
     </message>
 </context>
 <context>
@@ -1854,7 +1906,7 @@ Do you want to ignore these errors for this host?</source>
     </message>
     <message>
         <source>OpenBoard Cast</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenBoard Cast</translation>
     </message>
 </context>
 <context>
@@ -1913,7 +1965,7 @@ Do you want to ignore these errors for this host?</source>
     <name>UBStartupHintsPalette</name>
     <message>
         <source>Visible next time</source>
-        <translation type="unfinished"></translation>
+        <translation>Visible la próxima vez</translation>
     </message>
 </context>
 <context>
@@ -1932,6 +1984,17 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>%1 thumbnails generated ...</source>
         <translation>%1 miniaturas generadas...</translation>
+    </message>
+    <message>
+        <source>loading thumbnail of page %1</source>
+        <translation type="vanished">cargando miniaturas de la página %1</translation>
+    </message>
+</context>
+<context>
+    <name>UBThumbnailTextItem</name>
+    <message>
+        <source>Page %0</source>
+        <translation>Página %0</translation>
     </message>
 </context>
 <context>
@@ -2313,7 +2376,7 @@ Por favor, reinicie la aplicación para acceder a los documentos actualizados.</
     </message>
     <message>
         <source>Download PDF Document: would you prefer to download the PDF file or add it to the current OpenBoard document?</source>
-        <translation type="unfinished"></translation>
+        <translation>Descargar documento PDF: prefererías descargar el archivo PDF ou añadirlo al documento actual de OpenBoard?</translation>
     </message>
 </context>
 <context>
@@ -2367,11 +2430,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Restore credentials on reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Restablece las credenciais al reiniciar</translation>
     </message>
     <message>
         <source>OpenBoard</source>
-        <translation type="unfinished">OpenBoard</translation>
+        <translation>OpenBoard</translation>
     </message>
 </context>
 <context>
@@ -2408,6 +2471,14 @@ p, li { white-space: pre-wrap; }
         <source>Pen is Pressure Sensitive</source>
         <translation>El bolígrafo es sensible a la presión</translation>
     </message>
+    <message>
+        <source>Show preview circle from</source>
+        <translation>Mostrar vista previa del círculo de</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
 </context>
 <context>
     <name>capturePublishingDialog</name>
@@ -2436,7 +2507,7 @@ p, li { white-space: pre-wrap; }
     <name>documents</name>
     <message>
         <source>OpenBoard Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Documentos OpenBoard</translation>
     </message>
 </context>
 <context>
@@ -2579,18 +2650,38 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Open-Sankoré Importer</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar de Open-Sankoré</translation>
     </message>
     <message>
         <source>Check if Open-Sankoré data could be imported at launch</source>
-        <translation type="unfinished"></translation>
+        <translation>Compruebe si los datos de Open-Sankoré se pueden importar al iniciar</translation>
     </message>
     <message>
         <source>Use system keyboard (recommended)</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar el teclado del sistema (recomendado)</translation>
     </message>
     <message>
         <source>Built-in virtual keyboard button size:</source>
+        <translation>Tamaño del botón del teclado virtual integrado</translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation>Cuadrícula</translation>
+    </message>
+    <message>
+        <source>On Dark Background</source>
+        <translation>Sobre fondo oscuro</translation>
+    </message>
+    <message>
+        <source>Opacity</source>
+        <translation>Opacidad</translation>
+    </message>
+    <message>
+        <source>On Light Background</source>
+        <translation>Sobre fondo claro</translation>
+    </message>
+    <message>
+        <source>Swap first and second view displays</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

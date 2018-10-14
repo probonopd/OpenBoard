@@ -799,6 +799,18 @@
         <source>Open the tutorial web page</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Ruled Light Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ruled Dark Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset grid size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -892,6 +904,13 @@
     </message>
 </context>
 <context>
+    <name>UBBackgroundPalette</name>
+    <message>
+        <source>Grid size</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBBoardController</name>
     <message>
         <source>Downloading content %1 failed</source>
@@ -919,7 +938,7 @@
     </message>
     <message>
         <source>Delete page %1 from document</source>
-        <translation>删除文件的%1页</translation>
+        <translation type="vanished">删除文件的%1页</translation>
     </message>
     <message>
         <source>Page %1 deleted</source>
@@ -945,6 +964,10 @@
         <source>Document has just been saved...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Deleting page %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBBoardPaletteManager</name>
@@ -955,6 +978,13 @@
     <message>
         <source>CapturedImage</source>
         <translation>图像截图</translation>
+    </message>
+</context>
+<context>
+    <name>UBBoardThumbnailsView</name>
+    <message>
+        <source>Loading page (%1/%2)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1227,10 +1257,44 @@
     </message>
 </context>
 <context>
+    <name>UBDraggableThumbnail</name>
+    <message>
+        <source>Page %0</source>
+        <translation type="unfinished">页面 %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDraggableThumbnailView</name>
+    <message>
+        <source>Page %0</source>
+        <translation type="unfinished">页面 %0</translation>
+    </message>
+</context>
+<context>
     <name>UBExportAdaptor</name>
     <message>
         <source>Warnings during export was appeared</source>
         <translation>导出过程中出现警告</translation>
+    </message>
+    <message>
+        <source>Exporting document...</source>
+        <translation type="unfinished">文档导出中……</translation>
+    </message>
+    <message>
+        <source>Export failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to export to the selected location. You do not have the permissions necessary to save the file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export failed: location not writable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export successful.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1268,11 +1332,11 @@
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>文档导出中……</translation>
+        <translation type="vanished">文档导出中……</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>导出成功</translation>
+        <translation type="vanished">导出成功</translation>
     </message>
     <message>
         <source>Exporting %1 %2 of %3</source>
@@ -1280,18 +1344,6 @@
     </message>
     <message>
         <source>Export to OpenBoard Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export failed: location not writable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to export to the selected location. You do not have the permissions necessary to save the file.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1303,27 +1355,15 @@
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>文档导出中……</translation>
+        <translation type="vanished">文档导出中……</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>导出成功</translation>
+        <translation type="vanished">导出成功</translation>
     </message>
     <message>
         <source>Export to PDF</source>
         <translation>以PDF文件格式导出</translation>
-    </message>
-    <message>
-        <source>Export failed: location not writable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to export to the selected location. You do not have the permissions necessary to save the file.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1334,11 +1374,11 @@
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>文档导出中……</translation>
+        <translation type="vanished">文档导出中……</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>导出成功</translation>
+        <translation type="vanished">导出成功</translation>
     </message>
     <message>
         <source>Exporting page %1 of %2</source>
@@ -1384,7 +1424,7 @@
     </message>
     <message>
         <source>Set as background</source>
-        <translation>设置为背景</translation>
+        <translation type="vanished">设置为背景</translation>
     </message>
     <message>
         <source>Add to library</source>
@@ -1523,6 +1563,10 @@
     <message>
         <source>Go to Content Source</source>
         <translation>访问内容来源</translation>
+    </message>
+    <message>
+        <source>Set as background</source>
+        <translation type="unfinished">设置为背景</translation>
     </message>
 </context>
 <context>
@@ -1774,6 +1818,10 @@ Do you want to ignore these errors for this host?</source>
         <source>has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Moving page to trash folder...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBPlatformUtils</name>
@@ -1936,6 +1984,13 @@ Do you want to ignore these errors for this host?</source>
     <message>
         <source>%1 thumbnails generated ...</source>
         <translation>已为%1生成缩略图……</translation>
+    </message>
+</context>
+<context>
+    <name>UBThumbnailTextItem</name>
+    <message>
+        <source>Page %0</source>
+        <translation type="unfinished">页面 %0</translation>
     </message>
 </context>
 <context>
@@ -2412,6 +2467,14 @@ p, li { white-space: pre-wrap; }
         <source>Pen is Pressure Sensitive</source>
         <translation>使用压感笔</translation>
     </message>
+    <message>
+        <source>Show preview circle from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>capturePublishingDialog</name>
@@ -2595,6 +2658,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Built-in virtual keyboard button size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On Dark Background</source>
+        <translation type="unfinished">黑色背景</translation>
+    </message>
+    <message>
+        <source>Opacity</source>
+        <translation type="unfinished">透明度</translation>
+    </message>
+    <message>
+        <source>On Light Background</source>
+        <translation type="unfinished">白色背景</translation>
+    </message>
+    <message>
+        <source>Swap first and second view displays</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

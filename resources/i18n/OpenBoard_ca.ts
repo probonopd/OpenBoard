@@ -799,6 +799,18 @@
         <source>Open the tutorial web page</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Ruled Light Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ruled Dark Background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset grid size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PasswordDialog</name>
@@ -892,6 +904,13 @@
     </message>
 </context>
 <context>
+    <name>UBBackgroundPalette</name>
+    <message>
+        <source>Grid size</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UBBoardController</name>
     <message>
         <source>Downloading content %1 failed</source>
@@ -919,7 +938,7 @@
     </message>
     <message>
         <source>Delete page %1 from document</source>
-        <translation>Elimina la pàgina %1 del document</translation>
+        <translation type="vanished">Elimina la pàgina %1 del document</translation>
     </message>
     <message>
         <source>Page %1 deleted</source>
@@ -945,6 +964,10 @@
         <source>Document has just been saved...</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Deleting page %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBBoardPaletteManager</name>
@@ -955,6 +978,13 @@
     <message>
         <source>CapturedImage</source>
         <translation>CapturedImage</translation>
+    </message>
+</context>
+<context>
+    <name>UBBoardThumbnailsView</name>
+    <message>
+        <source>Loading page (%1/%2)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1229,10 +1259,44 @@
     </message>
 </context>
 <context>
+    <name>UBDraggableThumbnail</name>
+    <message>
+        <source>Page %0</source>
+        <translation type="unfinished">Pàgina %0</translation>
+    </message>
+</context>
+<context>
+    <name>UBDraggableThumbnailView</name>
+    <message>
+        <source>Page %0</source>
+        <translation type="unfinished">Pàgina %0</translation>
+    </message>
+</context>
+<context>
     <name>UBExportAdaptor</name>
     <message>
         <source>Warnings during export was appeared</source>
         <translation>Advertiments: durant l&apos;exportació han aparegut</translation>
+    </message>
+    <message>
+        <source>Exporting document...</source>
+        <translation type="unfinished">S&apos;està exportant el document...</translation>
+    </message>
+    <message>
+        <source>Export failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to export to the selected location. You do not have the permissions necessary to save the file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export failed: location not writable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export successful.</source>
+        <translation type="unfinished">L&apos;exportació ha estat correcta.</translation>
     </message>
 </context>
 <context>
@@ -1270,11 +1334,11 @@
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>S&apos;està exportant el document...</translation>
+        <translation type="vanished">S&apos;està exportant el document...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>L&apos;exportació ha estat correcta.</translation>
+        <translation type="vanished">L&apos;exportació ha estat correcta.</translation>
     </message>
     <message>
         <source>Exporting %1 %2 of %3</source>
@@ -1282,18 +1346,6 @@
     </message>
     <message>
         <source>Export to OpenBoard Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export failed: location not writable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to export to the selected location. You do not have the permissions necessary to save the file.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1305,7 +1357,7 @@
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>S&apos;està exportant el document...</translation>
+        <translation type="vanished">S&apos;està exportant el document...</translation>
     </message>
     <message>
         <source>Export to PDF</source>
@@ -1313,19 +1365,7 @@
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>L&apos;exportació ha estat correcta.</translation>
-    </message>
-    <message>
-        <source>Export failed: location not writable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to export to the selected location. You do not have the permissions necessary to save the file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">L&apos;exportació ha estat correcta.</translation>
     </message>
 </context>
 <context>
@@ -1336,11 +1376,11 @@
     </message>
     <message>
         <source>Exporting document...</source>
-        <translation>S&apos;està exportant el document...</translation>
+        <translation type="vanished">S&apos;està exportant el document...</translation>
     </message>
     <message>
         <source>Export successful.</source>
-        <translation>L&apos;exportació ha estat correcta.</translation>
+        <translation type="vanished">L&apos;exportació ha estat correcta.</translation>
     </message>
     <message>
         <source>Exporting page %1 of %2</source>
@@ -1386,7 +1426,7 @@
     </message>
     <message>
         <source>Set as background</source>
-        <translation>Estableix com a fons</translation>
+        <translation type="vanished">Estableix com a fons</translation>
     </message>
     <message>
         <source>Add to library</source>
@@ -1525,6 +1565,10 @@
     <message>
         <source>Go to Content Source</source>
         <translation>Ves a la font de contingut</translation>
+    </message>
+    <message>
+        <source>Set as background</source>
+        <translation type="unfinished">Estableix com a fons</translation>
     </message>
 </context>
 <context>
@@ -1776,6 +1820,10 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
         <source>has lost access to the document repository &apos;%1&apos;. Unfortunately the application must shut down to avoid data corruption. Latest changes may be lost as well.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Moving page to trash folder...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UBPlatformUtils</name>
@@ -1931,6 +1979,13 @@ Voleu ignorar aquests errors per a aquest amfitrió?</translation>
     <message>
         <source>%1 thumbnails generated ...</source>
         <translation>S&apos;han generat %1 miniatures...</translation>
+    </message>
+</context>
+<context>
+    <name>UBThumbnailTextItem</name>
+    <message>
+        <source>Page %0</source>
+        <translation type="unfinished">Pàgina %0</translation>
     </message>
 </context>
 <context>
@@ -2407,6 +2462,14 @@ p, li { white-space: pre-wrap; }
         <source>Pen is Pressure Sensitive</source>
         <translation>El llapis és sensible a la pressió</translation>
     </message>
+    <message>
+        <source>Show preview circle from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>capturePublishingDialog</name>
@@ -2590,6 +2653,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Built-in virtual keyboard button size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On Dark Background</source>
+        <translation type="unfinished">Sobre fons fosc</translation>
+    </message>
+    <message>
+        <source>Opacity</source>
+        <translation type="unfinished">Opacitat</translation>
+    </message>
+    <message>
+        <source>On Light Background</source>
+        <translation type="unfinished">Sobre fons clar</translation>
+    </message>
+    <message>
+        <source>Swap first and second view displays</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

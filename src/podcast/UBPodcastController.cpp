@@ -62,8 +62,11 @@
     #include "windowsmedia/UBWindowsMediaVideoEncoder.h"
     #include "windowsmedia/UBWaveRecorder.h"
 #elif defined(Q_OS_OSX)
-    #include "quicktime/UBQuickTimeVideoEncoder.h"
-    #include "quicktime/UBAudioQueueRecorder.h"
+    #include "ffmpeg/UBFFmpegVideoEncoder.h"
+    #include "ffmpeg/UBMicrophoneInput.h"
+#elif defined(Q_OS_LINUX)
+    #include "ffmpeg/UBFFmpegVideoEncoder.h"
+    #include "ffmpeg/UBMicrophoneInput.h"
 #endif
 
 #include "core/memcheck.h"
@@ -308,7 +311,9 @@ void UBPodcastController::start()
 #ifdef Q_OS_WIN
         mVideoEncoder = new UBWindowsMediaVideoEncoder(this);  //deleted on stop
 #elif defined(Q_OS_OSX)
-        mVideoEncoder = new UBQuickTimeVideoEncoder(this);  //deleted on stop
+        mVideoEncoder = new UBFFmpegVideoEncoder(this);
+#elif defined(Q_OS_LINUX)
+        mVideoEncoder = new UBFFmpegVideoEncoder(this);
 #endif
 
         if (mVideoEncoder)
@@ -803,7 +808,9 @@ QStringList UBPodcastController::audioRecordingDevices()
 #ifdef Q_OS_WIN
     devices = UBWaveRecorder::waveInDevices();
 #elif defined(Q_OS_OSX)
-    devices = UBAudioQueueRecorder::waveInDevices();
+    devices = UBMicrophoneInput::availableDevicesNames();
+#elif defined(Q_OS_LINUX)
+    devices = UBMicrophoneInput::availableDevicesNames();
 #endif
 
     return devices;
