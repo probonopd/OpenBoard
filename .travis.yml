@@ -8,7 +8,7 @@ before_install:
     - sudo apt-get update -qq
 
 install:
-    - sudo apt-get -y install qt55base qt55webkit qt55svg qt55script qt55xmlpatterns qt55tools qt55multimedia libavformat-dev libswscale-dev libavcodec-dev libxt-dev libpaper-dev
+    - sudo apt-get -y install qt55base qt55webkit qt55svg qt55script qt55xmlpatterns qt55tools qt55multimedia libavformat-dev libavresample-dev libswscale-dev libavcodec-dev libxt-dev libpaper-dev
     - source /opt/qt*/bin/qt*-env.sh
 
 script:
