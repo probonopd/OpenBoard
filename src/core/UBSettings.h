@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2016 Département de l'Instruction Publique (DIP-SEM)
+ * Copyright (C) 2015-2018 Département de l'Instruction Publique (DIP-SEM)
  *
  * Copyright (C) 2013 Open Education Foundation
  *
@@ -201,6 +201,7 @@ class UBSettings : public QObject
         static QString documentIdentifer;
         static QString documentVersion;
         static QString documentUpdatedAt;
+        static QString documentPageCount;
 
         static QString documentDate;
 
@@ -215,6 +216,10 @@ class UBSettings : public QObject
 
         static const int maxThumbnailWidth;
         static const int defaultThumbnailWidth;
+        static const int defaultSortKind;
+        static const int defaultSortOrder;
+        static const int defaultSplitterLeftSize;
+        static const int defaultSplitterRightSize;
         static const int defaultLibraryIconSize;
 
         static const int defaultImageWidth;
@@ -372,6 +377,10 @@ class UBSettings : public QObject
         UBSetting* favoritesNativeToolUris;
 
         UBSetting* documentThumbnailWidth;
+        UBSetting* documentSortKind;
+        UBSetting* documentSortOrder;
+        UBSetting* documentSplitterLeftSize;
+        UBSetting* documentSplitterRightSize;
         UBSetting* imageThumbnailWidth;
         UBSetting* videoThumbnailWidth;
         UBSetting* shapeThumbnailWidth;
@@ -404,6 +413,11 @@ class UBSettings : public QObject
         UBSetting* libIconSize;
 
         UBSetting* useSystemOnScreenKeyboard;
+
+        UBSetting* showDateColumnOnAlphabeticalSort;
+
+        UBSetting* emptyTrashForOlderDocuments;
+        UBSetting* emptyTrashDaysValue;
 
         UBSetting* magnifierDrawingMode;
         UBSetting* autoSaveInterval;

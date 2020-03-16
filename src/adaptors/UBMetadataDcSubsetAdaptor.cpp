@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2016 Département de l'Instruction Publique (DIP-SEM)
+ * Copyright (C) 2015-2018 Département de l'Instruction Publique (DIP-SEM)
  *
  * Copyright (C) 2013 Open Education Foundation
  *
@@ -125,6 +125,8 @@ void UBMetadataDcSubsetAdaptor::persist(UBDocumentProxy* proxy)
     // introduced in UB 4.4
     xmlWriter.writeTextElement(UBSettings::uniboardDocumentNamespaceUri, "updated-at", UBStringUtils::toUtcIsoDateTime(QDateTime::currentDateTimeUtc()));
 
+    xmlWriter.writeTextElement(UBSettings::uniboardDocumentNamespaceUri, "page-count", QString::number(proxy->pageCount()));
+
     xmlWriter.writeEndElement(); //dc:Description
     xmlWriter.writeEndElement(); //RDF
 
@@ -223,6 +225,11 @@ QMap<QString, QVariant> UBMetadataDcSubsetAdaptor::load(QString pPath)
                 {
                     metadata.insert(UBSettings::documentUpdatedAt, xml.readElementText());
                     updatedAtFound = true;
+                }
+                else if (xml.name() == "page-count"
+                        && xml.namespaceUri() == UBSettings::uniboardDocumentNamespaceUri)
+                {
+                    metadata.insert(UBSettings::documentPageCount, xml.readElementText());
                 }
                 metadata.insert(UBSettings::documentVersion, docVersion);
             }

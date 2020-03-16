@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2016 Département de l'Instruction Publique (DIP-SEM)
+ * Copyright (C) 2015-2018 Département de l'Instruction Publique (DIP-SEM)
  *
  * Copyright (C) 2013 Open Education Foundation
  *
@@ -112,6 +112,7 @@ class UBGraphicsTextItemDelegate : public UBGraphicsItemDelegate
         virtual ~UBGraphicsTextItemDelegate();
         bool isEditable();
         void scaleTextSize(qreal multiplyer);
+        void recolor();
         virtual QVariant itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value);
         virtual void createControls();
         qreal titleBarWidth();

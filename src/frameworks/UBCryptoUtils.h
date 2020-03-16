@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2016 Département de l'Instruction Publique (DIP-SEM)
+ * Copyright (C) 2015-2018 Département de l'Instruction Publique (DIP-SEM)
  *
  * Copyright (C) 2013 Open Education Foundation
  *
@@ -60,8 +60,13 @@ class UBCryptoUtils : public QObject
 
         void aesInit();
 
+#if OPENSSL_VERSION_NUMBER >= 10100000L
+        EVP_CIPHER_CTX *mAesEncryptContext;
+        EVP_CIPHER_CTX *mAesDecryptContext;
+#else
         EVP_CIPHER_CTX mAesEncryptContext;
         EVP_CIPHER_CTX mAesDecryptContext;
+#endif
 
 };
 

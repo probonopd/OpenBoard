@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2016 Département de l'Instruction Publique (DIP-SEM)
+ * Copyright (C) 2015-2018 Département de l'Instruction Publique (DIP-SEM)
  *
  * Copyright (C) 2013 Open Education Foundation
  *
@@ -128,9 +128,6 @@ int main(int argc, char *argv[])
             }
         }
     }
-
-
-    QObject::connect(&app, SIGNAL(messageReceived(const QString&, QObject*)), &app, SLOT(handleOpenMessage(const QString&)));
 
     qDebug() << "file name argument" << fileToOpen;
     int result = app.exec(fileToOpen);

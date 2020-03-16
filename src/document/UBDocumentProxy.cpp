@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2016 Département de l'Instruction Publique (DIP-SEM)
+ * Copyright (C) 2015-2018 Département de l'Instruction Publique (DIP-SEM)
  *
  * Copyright (C) 2013 Open Education Foundation
  *
@@ -42,10 +42,19 @@
 UBDocumentProxy::UBDocumentProxy()
     : mPageCount(0)
     , mPageDpi(0)
+    , mPersistencePath("")
 {
     init();
 }
 
+UBDocumentProxy::UBDocumentProxy(const UBDocumentProxy &rValue) :
+    QObject()
+{
+    mPersistencePath = rValue.mPersistencePath;
+    mMetaDatas = rValue.mMetaDatas;
+    mIsModified = rValue.mIsModified;
+    mPageCount = rValue.mPageCount;
+}
 
 UBDocumentProxy::UBDocumentProxy(const QString& pPersistancePath)
     : mPageCount(0)
@@ -55,6 +64,17 @@ UBDocumentProxy::UBDocumentProxy(const QString& pPersistancePath)
     setPersistencePath(pPersistancePath);
 
     mMetaDatas = UBMetadataDcSubsetAdaptor::load(pPersistancePath);
+}
+
+
+UBDocumentProxy::UBDocumentProxy(const QString& pPersistancePath, QMap<QString, QVariant> metadatas)
+    : mPageCount(0)
+    , mPageDpi(0)
+{
+    init();
+    setPersistencePath(pPersistancePath);
+
+    mMetaDatas = metadatas;
 }
 
 
@@ -70,6 +90,10 @@ void UBDocumentProxy::init()
     setDefaultDocumentSize(UBSettings::settings()->pageSize->get().toSize());
 }
 
+bool UBDocumentProxy::theSameDocument(UBDocumentProxy *proxy)
+{
+    return  proxy && mPersistencePath == proxy->mPersistencePath;
+}
 
 UBDocumentProxy::~UBDocumentProxy()
 {
@@ -246,7 +270,7 @@ QDateTime UBDocumentProxy::lastUpdate()
 {
     if(mMetaDatas.contains(UBSettings::documentUpdatedAt))
         return UBStringUtils::fromUtcIsoDate(metaData(UBSettings::documentUpdatedAt).toString());
-    return QDateTime().currentDateTime();
+    return QDateTime::currentDateTime();
 }
 
 bool UBDocumentProxy::isModified() const

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2016 Département de l'Instruction Publique (DIP-SEM)
+ * Copyright (C) 2015-2018 Département de l'Instruction Publique (DIP-SEM)
  *
  * Copyright (C) 2013 Open Education Foundation
  *
@@ -57,7 +57,7 @@ class UBThumbnail;
 
 class UBThumbnailWidget : public QGraphicsView
 {
-    Q_OBJECT;
+    Q_OBJECT
 
     public:
         UBThumbnailWidget(QWidget* parent);
@@ -355,6 +355,41 @@ class UBSceneThumbnailNavigPixmap : public UBSceneThumbnailPixmap
         UBSceneThumbnailNavigPixmap(const QPixmap& pix, UBDocumentProxy* proxy, int pSceneIndex);
         ~UBSceneThumbnailNavigPixmap();
 
+        bool editable()
+        {
+            return mEditable;
+        }
+
+        bool deletable()
+        {
+            return proxy()->pageCount() > 1;
+        }
+
+        bool movableUp()
+        {
+            return sceneIndex() > 0;
+        }
+
+        bool movableDown()
+        {
+            return sceneIndex() < (proxy()->pageCount() -1);
+        }
+
+        void showUI()
+        {
+            setEditable(true);
+        }
+
+        void hideUI()
+        {
+            setEditable(false);
+        }
+
+        void setEditable(bool editable)
+        {
+            mEditable = editable;
+        }
+
     protected:
         void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
         void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
@@ -367,10 +402,7 @@ class UBSceneThumbnailNavigPixmap : public UBSceneThumbnailPixmap
         void moveUpPage();
         void moveDownPage();
 
-        bool bButtonsVisible;
-        bool bCanDelete;
-        bool bCanMoveUp;
-        bool bCanMoveDown;
+        bool mEditable;
 };
 
 class UBImgTextThumbnailElement
@@ -431,6 +463,7 @@ private:
 
 class UBDraggableThumbnail : public UBThumbnailProxyWidget
 {
+    Q_OBJECT
     public:
         UBDraggableThumbnail(UBDocumentProxy* documentProxy, int index)
         : UBThumbnailProxyWidget(documentProxy, index)

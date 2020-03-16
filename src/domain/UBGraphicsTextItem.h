@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2016 Département de l'Instruction Publique (DIP-SEM)
+ * Copyright (C) 2015-2018 Département de l'Instruction Publique (DIP-SEM)
  *
  * Copyright (C) 2013 Open Education Foundation
  *
@@ -99,6 +99,7 @@ class UBGraphicsTextItem : public QGraphicsTextItem, public UBItem, public UBRes
         virtual void setUuid(const QUuid &pUuid);
         void activateTextEditor(bool activate);
         void setSelected(bool selected);
+        void recolor();
 
         QString mTypeTextHereLabel;
 

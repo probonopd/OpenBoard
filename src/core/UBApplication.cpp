@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2016 Département de l'Instruction Publique (DIP-SEM)
+ * Copyright (C) 2015-2018 Département de l'Instruction Publique (DIP-SEM)
  *
  * Copyright (C) 2013 Open Education Foundation
  *
@@ -59,8 +59,6 @@
 #include "gui/UBMainWindow.h"
 #include "gui/UBResources.h"
 #include "gui/UBThumbnailWidget.h"
-
-#include "adaptors/publishing/UBSvgSubsetRasterizer.h"
 
 #include "ui_mainWindow.h"
 
@@ -358,6 +356,8 @@ int UBApplication::exec(const QString& pFileToImport)
     else
         applicationController->showBoard();
 
+    emit UBDrawingController::drawingController()->colorPaletteChanged();
+
     onScreenCountChanged(1);
     connect(desktop(), SIGNAL(screenCountChanged(int)), this, SLOT(onScreenCountChanged(int)));
     return QApplication::exec();
@@ -451,6 +451,13 @@ void UBApplication::closeEvent(QCloseEvent *event)
 
 void UBApplication::closing()
 {
+    if (UBSettings::settings()->emptyTrashForOlderDocuments->get().toBool())
+    {
+        UBDocumentTreeModel *docModel = UBPersistenceManager::persistenceManager()->mDocumentTreeStructureModel;
+        documentController->deleteDocumentsInFolderOlderThan(docModel->trashIndex(), UBSettings::settings()->emptyTrashDaysValue->get().toInt());
+        if (docModel->hasChildren(docModel->trashIndex()))
+            documentController->deleteEmptyFolders(docModel->trashIndex());
+    }
 
     if (boardController)
         boardController->closing();

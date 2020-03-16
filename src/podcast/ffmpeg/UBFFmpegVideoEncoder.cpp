@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2016 Département de l'Instruction Publique (DIP-SEM)
+ * Copyright (C) 2015-2018 Département de l'Instruction Publique (DIP-SEM)
  *
  * This file is part of OpenBoard.
  *
@@ -744,6 +744,7 @@ void UBFFmpegVideoEncoderWorker::writeLatestVideoFrame()
 {
     AVFrame* frame = mImageQueue.dequeue();
     writeFrame(frame, mVideoPacket, mController->mVideoStream, mController->mOutputFormatContext);
+    av_freep(&frame->data[0]);
     av_frame_free(&frame);
 }
 
@@ -756,6 +757,7 @@ void UBFFmpegVideoEncoderWorker::writeLatestAudioFrame()
 #if LIBAVFORMAT_VERSION_MICRO < 100
     if (audio_samples_buffer) {
         av_free(audio_samples_buffer);
+        av_freep(&frame->data[0]);
         audio_samples_buffer = NULL;
     }
 #endif

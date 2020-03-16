@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015-2016 Département de l'Instruction Publique (DIP-SEM)
+ * Copyright (C) 2015-2018 Département de l'Instruction Publique (DIP-SEM)
  *
  * Copyright (C) 2013 Open Education Foundation
  *
@@ -1178,6 +1178,12 @@ void UBGraphicsScene::recolorAllItems()
                                                                   : UBGraphicsStrokesGroup::colorOnLightBackground);
                 curGroup->setColor(newColor);
             }
+        }
+
+        if (item->type() == UBGraphicsTextItem::Type)
+        {
+            UBGraphicsTextItem *textItem = static_cast<UBGraphicsTextItem*>(item);
+            textItem->recolor();
         }
     }
 
